@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Music App</title>
+    <!-- Static Load -->
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+  </head>
+
+  <body>
+    <div id="box">
+      <!-- Navigation Bar -->
+      <header>
+        <nav>
+          <img src="{% static "images/headphones.png" %}" alt="headphones" />
+          <a href="{% url "home-page" %}">Home</a>
+          <ul></ul>
+        </nav>
+      </header>
+      <!-- End Navigation Bar -->
+    <!-- Main Content -->
+
+      <!--Home Page-->
+      <div class="container-inline">
+        <section id="welcomePage">
+          <div id="welcome-message">
+            <h1>Welcome to</h1>
+            <h1>My Music App!</h1>
+          </div>
+          <div class="music-img">
+            <img src="{% static "images/musicIcons.webp" %}" alt="music-icon" />
+          </div>
+        </section>
+
+        <!-- Registration -->
+        <section id="registerPage">
+          <form method='post' action="">
+            <fieldset>
+              <legend>Profile</legend>
+              <!-- Form for Registration -->
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit" class="register">Enter</button>
+            </fieldset>
+          </form>
+        </section>
+      </div>
+      <!-- Footer -->
+      <footer>
+        <div>&copy;SoftUni Team 2024. All rights reserved.</div>
+    </footer>
+      <!-- End Footer -->
+    </div>
+  </body>
+</html>
